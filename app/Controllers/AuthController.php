@@ -59,7 +59,7 @@ class AuthController extends BaseController
 			$ret = Geetest::verify($request->getParam('geetest_challenge'),$request->getParam('geetest_validate'),$request->getParam('geetest_seccode'));
 			if (!$ret) {
 				$res['ret'] = 0;
-				$res['msg'] = "系统无法接受您的验证结果，请刷新页面后重试。";
+				$res['msg'] = "系统无法接受您的验证结果、，请刷新页面后重试。";
 				return $response->getBody()->write(json_encode($res));
 			}
 		}
@@ -107,7 +107,7 @@ class AuthController extends BaseController
 		
         Auth::login($user->id,$time);
         $rs['ret'] = 1;
-        $rs['msg'] = "欢迎回来";
+        $rs['msg'] = "欢迎回来、";
 		
 		$loginip=new LoginIp();
 		$loginip->ip=$_SERVER["REMOTE_ADDR"];
