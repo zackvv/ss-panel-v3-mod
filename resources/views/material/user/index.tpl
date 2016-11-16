@@ -37,123 +37,17 @@
 								</div>
 							</div>
 						
-							<div class="card">
-								<div class="card-main">
-									<div class="card-inner margin-bottom-no">
-										<p class="card-heading">All-in-One</p>
-										<p>这里为您提供了自动化地配置文件生成，包含了所有 Shadowsocks 服务器的信息，方便您在诸多的服务器中快速添加，快速切换。</p>
-										<p><a href="https://bit.no.com:43110/shadowsocksr.bit"><i class="icon icon-lg">desktop_windows</i>&nbsp;Windows 下载 C# 版</a>，解压，然后下载<a href="/user/getpcconf">这个</a>，放到程序目录下，运行程序，选择一个合适的服务器，更新一下PAC为绕过国内IP，然后开启系统代理即可上网。</p>
-										<p><a href="https://github.com/qinyuhang/ShadowsocksX-NG/releases"><i class="icon icon-lg">laptop_mac</i>&nbsp;Mac OS X下载这个</a>，安装，然后下载<a href="/user/getpcconf">这个</a>，运行程序，小飞机上右键 服务器列表 子菜单 的 “导入服务器配置文件...” 导入这个文件，然后选择一个合适的服务器，更新一下PAC，然后开启系统代理即可上网。</p>
-										<p><i class="icon icon-lg">laptop_mac</i>&nbsp;iOS 下载<a href="/link/{$ios_token}">这个</a>，导入到 Surge 中，然后就可以随意切换服务器上网了。</p>
-										<p><a href="https://bit.no.com:43110/shadowsocksr.bit"><i class="icon icon-lg">android</i>&nbsp;Android下载 Android 版</a>，安装，然后在手机上默认浏览器中点击<a id="android_add" href="{$android_add}">这个</a>，然后点击确定，批量添加完服务器，然后路由选择绕过大陆，右上角开启就可以上网了。</p>
-									</div>
-									
-								</div>
-							</div>
-						
-							<div class="card">
-								<div class="card-main">
-									<div class="card-inner margin-bottom-no">
-										<p class="card-heading">帐号使用情况</p>
-										<dl class="dl-horizontal">
-											<dt>帐号等级</dt>
-											<dd>{$user->class}</dd>
-
-											<dt>等级过期时间</dt>
-											<dd>{$user->class_expire}</dd>
-
-											<dt>帐号过期时间</dt>
-											<dd>{$user->expire_in}</dd>
-											
-											<dt>速度限制</dt>
-											{if $user->node_speedlimit!=0}
-											<dd>{$user->node_speedlimit}Mbps</dd>
-											{else}
-											<dd>不限速</dd>
-											{/if}
-										</dl>
-									</div>
-									
-								</div>
-							</div>
-						
-							
-							
-							
-						</div>
-						
-						<div class="col-lg-6 col-md-6">
 							
 						
-						
-							<div class="card">
-								<div class="card-main">
-									<div class="card-inner margin-bottom-no">
-									
-										<div id="traffic_chart" style="height: 300px; width: 100%;"></div>
-										
-										<script src="//cdn.bootcss.com/canvasjs/1.7.0/canvasjs.js"></script>
-										<script type="text/javascript">
-											var chart = new CanvasJS.Chart("traffic_chart",
-											{
-												title:{
-													text: "流量使用情况",
-													fontFamily: "Impact",
-													fontWeight: "normal"
-												},
-
-												legend:{
-													verticalAlign: "bottom",
-													horizontalAlign: "center"
-												},
-												data: [
-												{
-													//startAngle: 45,
-													indexLabelFontSize: 20,
-													indexLabelFontFamily: "Garamond",
-													indexLabelFontColor: "darkgrey",
-													indexLabelLineColor: "darkgrey",
-													indexLabelPlacement: "outside",
-													type: "doughnut",
-													showInLegend: true,
-													dataPoints: [
-														{if $user->transfer_enable != 0}
-														{
-															y: {$user->last_day_t/$user->transfer_enable*100}, legendText:"已用 {number_format($user->last_day_t/$user->transfer_enable*100,2)}% {$user->LastusedTraffic()}", indexLabel: "已用 {number_format($user->last_day_t/$user->transfer_enable*100,2)}% {$user->LastusedTraffic()}"
-														},
-														{
-															y: {($user->u+$user->d-$user->last_day_t)/$user->transfer_enable*100}, legendText:"今日 {number_format(($user->u+$user->d-$user->last_day_t)/$user->transfer_enable*100,2)}% {$user->TodayusedTraffic()}", indexLabel: "今日 {number_format(($user->u+$user->d-$user->last_day_t)/$user->transfer_enable*100,2)}% {$user->TodayusedTraffic()}"
-														},
-														{
-															y: {($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100}, legendText:"剩余 {number_format(($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100,2)}% {$user->unusedTraffic()}", indexLabel: "剩余 {number_format(($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100,2)}% {$user->unusedTraffic()}"
-														}
-														{/if}
-													]
-												}
-												]
-											});
-
-											chart.render();
-										</script>
-										
-									</div>
-									
-								</div>
-							</div>
 						
 						
 					
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
-										<p class="card-heading">续命获取流量</p>
-											<p>流量不会重置，可以通过续命获取流量。</p>
+										<p class="card-heading">激活账户</p>
 
-											<p>每次续命可以获取{$config['checkinMin']}~{$config['checkinMax']}MB流量。</p>
-										
-											<p>每天可以续命一次。您可以点击按钮或者摇动手机来续命。</p>
-
-											<p>上次续命时间：<code>{$user->lastCheckInTime()}</code></p>
+											<p>上次激活时间：<code>{$user->lastCheckInTime()}</code></p>
 											
 											<p id="checkin-msg"></p>
 											
@@ -166,10 +60,10 @@
 										<div class="card-action-btn pull-left">
 											{if $user->isAbleToCheckin() }
 												<p id="checkin-btn">
-													<button id="checkin" class="btn btn-brand btn-flat waves-attach"><span class="icon">check</span>&nbsp;续命</button>
+													<button id="checkin" class="btn btn-brand btn-flat waves-attach"><span class="icon">check</span>&nbsp;激活</button>
 												</p>
 											{else}
-												<p><a class="btn btn-brand disabled btn-flat waves-attach" href="#"><span class="icon">check</span>&nbsp;不能续命</a></p>
+												<p><a class="btn btn-brand disabled btn-flat waves-attach" href="#"><span class="icon">check</span>&nbsp;不能激活</a></p>
 											{/if}
 										</div>
 									</div>
@@ -177,23 +71,7 @@
 								</div>
 							</div>
 						
-							<div class="card">
-								<div class="card-main">
-									<div class="card-inner margin-bottom-no">
-										<p class="card-heading">连接信息</p>
-											<dl class="dl-horizontal">
-												<dt>端口</dt>
-												<dd>{$user->port}</dd>
-												<dt>密码</dt>
-												<dd>{$user->passwd}</dd>
-												<!--
-												<dt>加密方式</dt>
-												<dd>{$user->method}</dd>
-												-->
-												<dt>上次使用</dt>
-												<dd>{$user->lastSsTime()}</dd>
-											</dl>
-									</div>
+						
 									
 								</div>
 							</div>
