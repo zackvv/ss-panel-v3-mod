@@ -27,8 +27,8 @@
 								<div class="card-inner">
 									<h4>注意!</h4>
 									<p>请勿在任何地方公开节点地址！</p>
-									<p>流量比例为0.5即使用1000MB按照500MB流量记录记录结算.</p>
-									<a href="javascript:void(0);" onClick="urlChange('guide',0)">如果您不知道如何查看节点的详细信息和二维码，请点我。</a>
+									<p></p>
+									
 								</div>
 							</div>
 						</div>
@@ -77,38 +77,10 @@
 																			{if $node->sort > 2 && $node->sort != 5}
 																				<p>地址：<span class="label" > 
 																				<a href="javascript:void(0);" onClick="urlChange('{$node->id}',0)">请点这里进入查看详细信息</a>
-																			{else}
-																				<p>地址：<span class="label label-brand-accent"> 
-																				{$node->server}
-																			{/if}
-																				
-																				</span></p>
-																			
-																			{if $node->sort == 0||$node->sort==7||$node->sort==8}
-																				<p>加密方式：<span class="label label-brand"> 
-																					{if $node->custom_method == 1}
-																						{$user->method}
-																					{else}
-																						{$node->method}
-																					{/if}
-																				</span></p>
+																	
 																				
 																				{if $node->sort==0&&$node->custom_rss==1&&$config['enable_rss']=='true'}
-																					<p>协议：<span class="label label-brand-accent"> 
-																						{$user->protocol}
-																					</span></p>
-																					
-																					<p>协议参数：<span class="label label-red"> 
-																						{$user->protocol_param}
-																					</span></p>
-																					
-																					<p>混淆方式：<span class="label label-brand"> 
-																						{$user->obfs}
-																					</span></p>
-																					
-																					<p>混淆参数：<span class="label label-green"> 
-																						{$user->obfs_param}
-																					</span></p>
+																				
 																				{/if}
 																				
 																				
@@ -157,40 +129,9 @@
 																						<span class="label label-green">{$node->status}</span>
 																					</p>
 																					
-																					
-																					<p>地址：<span class="label label-brand-accent"> 
-																					{$node->server}
-																					
-																					</span></p>
-																					
-																					<p>端口：<span class="label label-brand-red"> 
-																						{$single_muport['user']['port']}
-																					</span></p>
-																					
-																					<p>加密方式：<span class="label label-brand"> 
-																						{$single_muport['user']['method']}
-																					</span></p>
-																					
-																					<p>协议：<span class="label label-brand-accent"> 
-																						{$single_muport['user']['protocol']}
-																					</span></p>
-																					
-																					<p>协议参数：<span class="label label-red"> 
-																						{$single_muport['user']['protocol_param']}
-																					</span></p>
-																					
-																					<p>混淆方式：<span class="label label-brand"> 
-																						{$single_muport['user']['obfs']}
-																					</span></p>
-																					
-																					<p>混淆参数：<span class="label label-green"> 
-																						{$single_muport['user']['obfs_param']}
-																					</span></p>
-																					
-																					<p>{$node->info}</p>
-																					
-																					
-																					
+																			
+																				
+																				
 																					
 																					 </div>
 																					
