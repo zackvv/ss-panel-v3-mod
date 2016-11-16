@@ -12,7 +12,7 @@
 							<div class="card-main">
 								<div class="card-header">
 									<div class="card-inner">
-										<h1 class="card-heading">和我签订契约，成为魔法少女吧。</h1>
+										<h1 class="card-heading">签约吗？经过我的允许了吗？~zack</h1>
 									</div>
 								</div>
 								<div class="card-inner">
@@ -22,19 +22,13 @@
 										</span>
 									</p>
 									
-										<div class="form-group form-group-label">
-											<div class="row">
-												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="name">昵称</label>
-													<input class="form-control" id="name" type="text">
-												</div>
-											</div>
-										</div>
 										
+                                        
+                                        
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="email">邮箱</label>
+													<label class="floating-label" for="email">机器码+@z.c</label>
 													<input class="form-control" id="email" type="text">
 												</div>
 											</div>
@@ -55,46 +49,13 @@
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="passwd">密码</label>
+													<label class="floating-label" for="passwd">工号</label>
 													<input class="form-control" id="passwd" type="password">
 												</div>
 											</div>
 										</div>
-										
-										<div class="form-group form-group-label">
-											<div class="row">
-												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="repasswd">重复密码</label>
-													<input class="form-control" id="repasswd" type="password">
-												</div>
-											</div>
-										</div>
-										
-										
-										<div class="form-group form-group-label">
-											<div class="row">
-												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="imtype">选择您的联络方式</label>
-													<select class="form-control" id="imtype">
-														<option></option>
-														<option value="1">微信</option>
-														<option value="2">QQ</option>
-														<option value="3">Google+</option>
-														<option value="4">Telegram</option>
-													</select>
-												</div>
-											</div>
-										</div>
-										
-										
-										<div class="form-group form-group-label">
-											<div class="row">
-												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="wechat">在这输入联络方式账号</label>
-													<input class="form-control" id="wechat" type="text">
-												</div>
-											</div>
-										</div>
+								
+									
 										
 										
 										
@@ -130,7 +91,8 @@
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<p>注册即代表同意<a href="/tos">服务条款</a>，以及保证所录入信息的真实性，如有不实信息会导致账号被删除。</p>
+													<p>禁止使用本站服务进行任何违法恶意活动。使用任何节点，需遵循节点所属国家的关法律以及中国法律。
+禁止滥用本站提供的服务。</p>
 												</div>
 											</div>
 										</div>
@@ -158,7 +120,7 @@
 										{include file='reg_tos.tpl'}
 									</div>
 									<div class="modal-footer">
-										<p class="text-right"><button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" type="button" id="cancel">我不服</button><button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" id="reg" type="button">资慈</button></p>
+										<p class="text-right"><button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" type="button" id="cancel">在对一次</button><button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" id="reg" type="button">对好了</button></p>
 										
 									</div>
 								</div>
