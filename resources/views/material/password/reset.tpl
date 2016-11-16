@@ -101,5 +101,5 @@
         $("#reset").click(function(){
             reset();
         });
-    })
+    }) 
 </script>
