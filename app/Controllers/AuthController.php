@@ -52,14 +52,15 @@ class AuthController extends BaseController
         $email = strtolower($email);
         $passwd = $request->getParam('passwd');
 		$code = $request->getParam('code');
-        $rememberMe = $request->getParam('remember_me');
+        $rememberMe = $request->getParam('
+		');
 		
 		if(Config::get('enable_geetest_login') == 'true')
 		{
 			$ret = Geetest::verify($request->getParam('geetest_challenge'),$request->getParam('geetest_validate'),$request->getParam('geetest_seccode'));
 			if (!$ret) {
 				$res['ret'] = 0;
-				$res['msg'] = "系统无法接受您的验证结果、，请刷新页面后重试。";
+				$res['msg'] = "系统无法接受您的验证结果，请刷新页面后重试。";
 				return $response->getBody()->write(json_encode($res));
 			}
 		}
@@ -69,13 +70,13 @@ class AuthController extends BaseController
 
         if ($user == null){
             $rs['ret'] = 0;
-            $rs['msg'] = "401 邮箱或者密码错误";
+            $rs['msg'] = "401 机器码或者工号错误";
             return $response->getBody()->write(json_encode($rs));
         }
 
         if (!Hash::checkPassword($user->pass,$passwd)){
             $rs['ret'] = 0;
-            $rs['msg'] = "402 邮箱或者密码错误";
+            $rs['msg'] = "402 机器码或者工号错误";
 			
 			
 			$loginip=new LoginIp();
@@ -107,7 +108,7 @@ class AuthController extends BaseController
 		
         Auth::login($user->id,$time);
         $rs['ret'] = 1;
-        $rs['msg'] = "欢迎回来、";
+        $rs['msg'] = "欢迎回来";
 		
 		$loginip=new LoginIp();
 		$loginip->ip=$_SERVER["REMOTE_ADDR"];
@@ -156,14 +157,14 @@ class AuthController extends BaseController
 			if($email=="")
 			{
 				$res['ret'] = 0;
-				$res['msg'] = "哦？你填了你的邮箱了吗？";
+				$res['msg'] = "哦？你填了你的流水号了吗？";
 				return $response->getBody()->write(json_encode($res));
 			}
 			
 			// check email format
 			if(!Check::isEmailLegal($email)){
 				$res['ret'] = 0;
-				$res['msg'] = "邮箱无效";
+				$res['msg'] = "流水号无效";
 				return $response->getBody()->write(json_encode($res));
 			}
 			
@@ -256,7 +257,7 @@ class AuthController extends BaseController
         // check email format
         if(!Check::isEmailLegal($email)){
             $res['ret'] = 0;
-            $res['msg'] = "邮箱无效";
+            $res['msg'] = "流水号无效";
             return $response->getBody()->write(json_encode($res));
         }
 		
@@ -273,27 +274,28 @@ class AuthController extends BaseController
 		}
 		
         // check pwd length
-        if(strlen($passwd)<8){
+        if(strlen($passwd)<1){
             $res['ret'] = 0;
             $res['msg'] = "密码太短";
             return $response->getBody()->write(json_encode($res));
         }
 
         // check pwd re
+		/*zack
         if($passwd != $repasswd){
             $res['ret'] = 0;
             $res['msg'] = "两次密码输入不符";
             return $response->getBody()->write(json_encode($res));
         }
-
+      zack*/
         // check email
         $user = User::where('email',$email)->first();
         if ( $user != null) {
             $res['ret'] = 0;
-            $res['msg'] = "邮箱已经被注册了";
+            $res['msg'] = "流水号已经被注册了";
             return $response->getBody()->write(json_encode($res));
         }
-		
+		/*zack
 		if($imtype==""||$wechat=="")
 		{
 			$res['ret'] = 0;
@@ -307,7 +309,7 @@ class AuthController extends BaseController
             $res['msg'] = "此联络方式已经被注册了";
             return $response->getBody()->write(json_encode($res));
         }
-
+     zack */
         // do reg user
         $user = new User();
 		
