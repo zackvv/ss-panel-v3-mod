@@ -24,7 +24,7 @@
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="email">邮箱</label>
+													<label class="floating-label" for="email">机器码+@z.c</label>
 													<input class="form-control" id="email" type="text">
 												</div>
 											</div>
@@ -32,20 +32,13 @@
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="passwd">密码</label>
+													<label class="floating-label" for="passwd">工号</label>
 													<input class="form-control" id="passwd" type="password">
 												</div>
 											</div>
 										</div>
 										
-										<div class="form-group form-group-label">
-											<div class="row">
-												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="code">两步验证码(没有就别填)</label>
-													<input class="form-control" id="code" type="text" placeholder="没有就别填">
-												</div>
-											</div>
-										</div>
+									
 										
 										{if $geetest_html != null}
 											<div class="form-group form-group-label">
