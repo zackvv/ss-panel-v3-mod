@@ -1581,7 +1581,7 @@ class UserController extends BaseController
         $this->user->transfer_enable = $this->user->transfer_enable + Tools::toMB($traffic);
         $this->user->last_check_in_time = time();
         $this->user->save();
-        $res['msg'] = sprintf("获得了 %u MB流量.", $traffic);
+        $res['msg'] = sprintf("获得了一年使用权限", $traffic);
         $res['ret'] = 1;
         return $this->echoJson($response, $res);
     }
