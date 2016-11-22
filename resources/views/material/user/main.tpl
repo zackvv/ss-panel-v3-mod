@@ -259,11 +259,7 @@
 								</a>
 							</li>
 							
-							<li>
-								<a href="/user/invite">
-									<i class="icon icon-lg">loyalty</i>&nbsp;邀请码
-								</a>
-							</li>
+						
 							
 							<li>
 								<a href="/user/announcement">
@@ -307,51 +303,13 @@
 							</li>
 						</ul>
 
-						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_detect">审计</a>
-						<ul class="menu-collapse collapse in" id="ui_menu_detect">
-							<li><a href="/user/detect"><i class="icon icon-lg">account_balance</i>&nbsp;审计规则</a></li>
-							<li><a href="/user/detect/log"><i class="icon icon-lg">assignment_late</i>&nbsp;审计记录</a></li>
-						</ul>
+					
 						
-						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_trade">帮助</a>
-						<ul class="menu-collapse collapse in" id="ui_menu_trade">
-							{if $config['enable_wecenter']=='true'}
-							<li>
-								<a href="{$config["wecenter_url"]}" target="_blank">
-									<i class="icon icon-lg">help</i>&nbsp;问答系统
-								</a>
-							</li>
-							{/if}
-							
-							<li>
-								<a href="/user/ticket">
-									<i class="icon icon-lg">question_answer</i>&nbsp;工单系统
-								</a>
-							</li>
-						</ul>
+					
 
 						
-						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_help">交易</a>
-						<ul class="menu-collapse collapse in" id="ui_menu_help">
-						
-						
-							<li>
-								<a href="/user/shop">
-									<i class="icon icon-lg">shop</i>&nbsp;商店
-								</a>
-							</li>
-							
-							<li><a href="/user/bought"><i class="icon icon-lg">shopping_cart</i>&nbsp;购买记录</a></li>
-							
-							
-
-
-							<li>
-								<a href="/user/code">
-									<i class="icon icon-lg">code</i>&nbsp;充值
-								</a>
-							</li>
-						</ul>
+					
+				
 						
 						{if $user->isAdmin()}
 							<li>
